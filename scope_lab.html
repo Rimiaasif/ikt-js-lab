@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope Lab</title>
+</head>
+<body>
+    <h1>Working with var, let, and const</h1>
+
+    <script>
+        // Step 1: Defining variables
+        var nameVar = "Rimia (var)";
+        let nameLet = "Rimia (let)";
+        const nameConst = "Rimia (const)";
+
+        console.log("Global var:", nameVar);
+        console.log("Global let:", nameLet);
+        console.log("Global const:", nameConst);
+
+        // Step 2: Block Scope Example
+        if (true) {
+            var varTest = "I'm var inside block";
+            let letTest = "I'm let inside block";
+            const constTest = "I'm const inside block";
+            console.log("Inside block → var:", varTest);
+            console.log("Inside block → let:", letTest);
+            console.log("Inside block → const:", constTest);
+        }
+
+        console.log("Outside block → var:", varTest);
+        // console.log("Outside block → let:", letTest); // will give error if uncommented
+        // console.log("Outside block → const:", constTest); // will give error if uncommented
+
+        // Step 3: Function Scope Example
+        function testScope() {
+            var funcVar = "Function var";
+            let funcLet = "Function let";
+            const funcConst = "Function const";
+            console.log("Inside function:", funcVar, funcLet, funcConst);
+        }
+
+        testScope();
+        // console.log(funcVar); // will give error if uncommented
+    </script>
+</body>
+</html>
